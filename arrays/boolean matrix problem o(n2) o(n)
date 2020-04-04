@@ -1,0 +1,59 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class GFG {
+	public static void main (String[] args) {
+	    Scanner scan=new Scanner(System.in);
+	    int t=scan.nextInt();
+	    while(t>0){
+	        int a=100000;
+	        int m=scan.nextInt();
+	        int n=scan.nextInt();
+	        int[][] arr = new int[m][n];
+	        for(int i=0;i<m;i++){
+	            for(int j=0;j<n;j++){
+	                arr[i][j] =scan.nextInt();
+	            }
+	        }
+	        boolean fr=false;
+	        boolean fc=false;
+	        for(int i=0;i<m;i++){
+	            for(int j=0;j<n;j++){
+	                if(arr[i][j]==1){
+	                    if(i==0){fr =true;}
+	                    if(j==0){fc=true;}
+	                   arr[i][0] =1;
+	                   arr[0][j]=1;
+	                        
+	                }
+	            }
+	        }
+	        for(int i=1;i<m;i++){
+	          for(int j=1;j<n;j++){
+	              if(arr[0][j]==1 || arr[i][0]==1){
+	                  arr[i][j]=1;
+	              }
+	          }
+	        }
+	        if(fr){
+	            for(int j=0;j<n;j++){
+	               arr[0][j] =1;
+	            }
+	        }
+	        if(fc){
+	            for(int i=0;i<m;i++){
+	                arr[i][0] =1;
+	            }
+	        }
+	        for(int i=0;i<m;i++){
+	            for(int j=0;j<n;j++){
+	                System.out.print(arr[i][j]+" ");
+	            }
+	            System.out.println();
+	        }
+	        t--;
+	    }
+	
+	}
+}
