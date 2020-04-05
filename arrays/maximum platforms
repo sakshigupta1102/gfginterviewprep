@@ -1,0 +1,43 @@
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class GFG {
+	public static void main (String[] args) {
+		Scanner scan=new Scanner(System.in);
+		int t=scan.nextInt();
+		while(t>0){
+		    int n=scan.nextInt();
+		    int[] stime=new int[n];
+		    int[] etime=new int[n];
+		    for(int i=0;i<n;i++){
+		        stime[i]=scan.nextInt();
+		    }
+		    for(int i=0;i<n;i++){
+		        etime[i] = scan.nextInt();
+		    }
+		    Arrays.sort(stime);
+		    Arrays.sort(etime);
+		    int ans=1;
+		    int maxplatform=1;
+		    int i=1;
+		    int j=0;
+		    while(i<n && j<n){
+		        if(stime[i] <= etime[j] ){
+		            maxplatform++;
+		            ans= Math.max(maxplatform,ans);
+		            i++;
+		        }
+		        else{
+		            maxplatform--;
+		            j++;
+		        
+		        }
+		    }
+		   
+		    System.out.println(ans);
+		    t--;
+		}
+	}
+}
