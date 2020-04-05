@@ -1,0 +1,31 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class GFG {
+	public static void main (String[] args) {
+	   Scanner scan = new Scanner(System.in);
+	   int t=scan.nextInt();
+	   while(t>0){
+	       int ans=0;
+	       int n=scan.nextInt();
+	       while(n>0){
+	           ans++;
+	           int rem= n&1;
+	           if(rem ==1){
+	               break;
+	           }
+	           
+	           n=n>>1;
+	       }
+	       if(ans>0){
+	           System.out.println(ans);
+	       }
+	       else{
+	           System.out.println(0);
+	       }
+	       
+	       t--;
+	   }
+	}
+}
