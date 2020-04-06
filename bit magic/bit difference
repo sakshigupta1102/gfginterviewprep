@@ -1,0 +1,30 @@
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class GFG {
+	public static void main (String[] args) {
+	   Scanner scan = new Scanner(System.in);
+	   int t=scan.nextInt();
+	   while(t>0){
+	       int a=scan.nextInt();
+	       int b=scan.nextInt();
+	       int ans=0;
+	       while(a>0 || b>0){
+	           int r1=a&1;
+	           int r2= b&1;
+	           if(r1!=r2){
+	               ans++;
+	           }
+	           
+	           a=a>>1;
+	           b=b>>1;
+	       }
+	       
+	       System.out.println(ans);
+	       
+	       t--;
+	   }
+	   }
+}
